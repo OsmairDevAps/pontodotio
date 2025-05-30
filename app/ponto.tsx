@@ -1,36 +1,13 @@
-import { useRouter } from 'expo-router';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useState } from 'react'
+import { View, Button, Text } from 'react-native'
 
-export default function IndexScreen() {
-  const router = useRouter()
+export default function BatidaPonto() {
+  const [status, setStatus] = useState<string>('Clicar')
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Ponto</Text>
-      <TouchableOpacity 
-        style={styles.botao}
-        onPress={router.back}
-      >
-        <Text>Voltar</Text>
-      </TouchableOpacity>
+    <View style={{ padding: 20 }}>
+      <Button title="Bater Ponto" onPress={()=>{}} />
+      <Text style={{ marginTop: 10 }}>{status}</Text>
     </View>
-  );
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  botao: {
-    marginTop: 10,
-    padding: 10,
-    borderColor: '#121212',
-    backgroundColor: '#eaeaea',
-  }
-});
